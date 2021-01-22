@@ -1,8 +1,8 @@
-# ASP.NET Core x OpenAPI sandbox project
+# 🚀 ASP.NET Core x OpenAPI sandbox project
 
 ## Projects Overview
 
-### [AspnetCore31](./src/AspnetCore31)
+### 🍖 [AspnetCore31](./src/AspnetCore31)
 
 - ASP.NET Core 3.1 Web API
 - Swashbuckle
@@ -10,7 +10,7 @@
 
 More detail: [BEACHSIDE BLOG - ASP.NET Core で Open API (Swagger) の設定の基礎 (.NET Core 3.1 と .NET 5)](https://blog.beachside.dev/entry/2021/01/22/123000)
 
-### [AspnetCore50](./src/AspnetCore50)
+### 🍖 [AspnetCore50](./src/AspnetCore50)
 
 Same as "AspnetCore31".
 
@@ -20,7 +20,7 @@ Same as "AspnetCore31".
 
 More detail: [BEACHSIDE BLOG - ASP.NET Core で Open API (Swagger) の設定の基礎 (.NET Core 3.1 と .NET 5)](https://blog.beachside.dev/entry/2021/01/22/123000)
 
-### AspnetCore50WithAzureAdAuthorizationCode
+### 🍖 [AspnetCore50WithAzureAdAuthorizationCode](./src/AspnetCore50WithAzureAdAuthorizationCode)
 
 
 - ASP.NET Core 5.0 Web API (Azure AD Authorization)
@@ -52,7 +52,7 @@ Need to update appsettings.json as following:
 More detail: [BEACHSIDE BLOG - Swagger UI で Azure AD の認証する (ASP.NET Core, Authorization Code Flow with PKCE)](https://blog.beachside.dev/entry/2021/01/25/123000)
 
 
-### [AspnetCore50WithAzureAdBearerSet](./src/AspnetCore50WithAzureAdBearerSet)
+### 🍖 [AspnetCore50WithAzureAdBearerSet](./src/AspnetCore50WithAzureAdBearerSet)
 
 - ASP.NET Core 5.0 Web API (Azure AD Authorization)
 - Swashbuckle
