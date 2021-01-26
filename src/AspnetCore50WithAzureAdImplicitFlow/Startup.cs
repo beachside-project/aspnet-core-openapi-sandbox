@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Any;
+using Microsoft.OpenApi.Interfaces;
 using Microsoft.OpenApi.Models;
 
-namespace AspnetCore50WithAzureAdAuthorizationCode
+namespace AspnetCore50WithAzureAdImplicitFlow
 {
     public class Startup
     {
@@ -29,25 +31,46 @@ namespace AspnetCore50WithAzureAdAuthorizationCode
                     options.Audience = Configuration.GetValue<string>("AzureAd:clientId");
                 });
 
+
+
+            // TODO: MEMO
+            /***
+             * 2021-01-26時点は NOT WORKING.
+             * NuGet package の問題 (ui 側の問題もあるっぽい)
+             * https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/1235
+             *
+             * x-tokenName support の issue も再発してるみたいでカオスになってるので、実際に利用するのにはしばらく様子見。
+             * implicit flow 使ってるなら手で bearer token セットする方を使った方が安全。
+             *
+             * ちなみに以下の実装のように、Scope に openid と api の scope を追加すると、
+             * authorize endpoint に request する際の query parameter は "response_type=token" にはなるけどなぜか id token も取得できて、
+             * id token を bearer にセットして api を call してくれるので、無理やり動かすことはできる。
+             * (そもそも "response_type=token" で id token とれてるのもおかしいけど...)
+             *
+             * azure ad は beachside-sandbox > swagger-app-implicit で検証中
+             ***/
+
+
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AspnetCore50WithAzureAdAuthorizationCode", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AspnetCore50WithAzureAdImplicitFlow", Version = "v1" });
 
-                c.AddSecurityDefinition("Azure AD - Authorization Code Flow", new OpenApiSecurityScheme
+                c.AddSecurityDefinition("Azure AD - Implicit Flow", new OpenApiSecurityScheme
                 {
                     Type = SecuritySchemeType.OAuth2,
+                    //Extensions = new Dictionary<string, IOpenApiExtension> { { "x-tokenName", new OpenApiString("id_token") } },
                     Flows = new OpenApiOAuthFlows
                     {
-                        AuthorizationCode = new OpenApiOAuthFlow
+                        Implicit = new OpenApiOAuthFlow
                         {
-                            AuthorizationUrl = new Uri(Configuration.GetValue<string>("AzureAd:AuthorizationUrl")),
-                            TokenUrl = new Uri(Configuration.GetValue<string>("AzureAd:tokenUrl")),
+                            AuthorizationUrl = new Uri(Configuration.GetValue<string>("AzureAd:authorizationUrl")),
                             Scopes = new Dictionary<string, string>
                             {
                                 ["openid"] = "Sign In Permissions",
                                 [Configuration.GetValue<string>("AzureAd:apiScope")] = "API permission"
-                            },
+                            }
                         }
                     },
                     Description = "Azure AD Authorization Code Flow authorization",
@@ -61,12 +84,14 @@ namespace AspnetCore50WithAzureAdAuthorizationCode
                     {
                         new OpenApiSecurityScheme
                         {
-                            Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id ="Azure AD - Authorization Code Flow"},
+                            //Extensions = new Dictionary<string, IOpenApiExtension> { { "x-tokenName", new OpenApiString("id_token") } },
+                            Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id ="Azure AD - Implicit Flow"},
                         },
                         // Scope は必要に応じて入力する
                         new string[] {}
                     }
                 });
+
             });
         }
 
@@ -79,9 +104,8 @@ namespace AspnetCore50WithAzureAdAuthorizationCode
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "SwaggerSandboxAspnetCore31WithAzureAd v1");
                     c.OAuthClientId(Configuration.GetValue<string>("AzureAd:clientId"));
-                    c.OAuthUsePkce();
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "AspnetCore50WithAzureAdImplicitFlow v1");
                 });
             }
 
