@@ -20,6 +20,15 @@ Same as "AspnetCore31".
 
 More detail: [BEACHSIDE BLOG - ASP.NET Core で Open API (Swagger) の設定の基礎 (.NET Core 3.1 と .NET 5)](https://blog.beachside.dev/entry/2021/01/22/123000)
 
+
+### [AspnetCore50RouteCustomize](./src/AspnetCore50RouteCustomize)
+
+- ASP.NET Core 5.0 Web API
+- Swashbuckle
+- Route customize
+
+More detail: [Swagger UI の相対パスをカスタマイズする ( ASP.NET Core, OpenAPI, Swashbuckle )](https://blog.beachside.dev/entry/2021/01/27/183000)
+
 ### 🍖 [AspnetCore50WithAzureAdAuthorizationCode](./src/AspnetCore50WithAzureAdAuthorizationCode)
 
 
