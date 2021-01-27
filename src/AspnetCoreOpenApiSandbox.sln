@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspnetCore50WithAzureAdAuth
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspnetCore50WithAzureAdBearerSet", "AspnetCore50WithAzureAdBearerSet\AspnetCore50WithAzureAdBearerSet.csproj", "{1F74333F-628A-41F4-B630-CAA055D09BF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnetCore50WithAzureAdImplicitFlow", "AspnetCore50WithAzureAdImplicitFlow\AspnetCore50WithAzureAdImplicitFlow.csproj", "{7FBE729F-93F3-48F6-9389-A3C01AE64AC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspnetCore50WithAzureAdImplicitFlow", "AspnetCore50WithAzureAdImplicitFlow\AspnetCore50WithAzureAdImplicitFlow.csproj", "{7FBE729F-93F3-48F6-9389-A3C01AE64AC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnetCore50RouteCustomize", "AspnetCore50RouteCustomize\AspnetCore50RouteCustomize.csproj", "{DED52736-6B10-447B-B959-B1238A84E42B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{7FBE729F-93F3-48F6-9389-A3C01AE64AC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FBE729F-93F3-48F6-9389-A3C01AE64AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FBE729F-93F3-48F6-9389-A3C01AE64AC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DED52736-6B10-447B-B959-B1238A84E42B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DED52736-6B10-447B-B959-B1238A84E42B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DED52736-6B10-447B-B959-B1238A84E42B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DED52736-6B10-447B-B959-B1238A84E42B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
