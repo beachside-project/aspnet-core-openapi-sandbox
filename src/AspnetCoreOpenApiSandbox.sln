@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30711.63
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspnetCore31", "AspnetCore31\AspnetCore31.csproj", "{B51E91E7-FA4A-424B-A643-7332428F97FC}"
 EndProject
@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspnetCore50WithAzureAdBear
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspnetCore50WithAzureAdImplicitFlow", "AspnetCore50WithAzureAdImplicitFlow\AspnetCore50WithAzureAdImplicitFlow.csproj", "{7FBE729F-93F3-48F6-9389-A3C01AE64AC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnetCore50RouteCustomize", "AspnetCore50RouteCustomize\AspnetCore50RouteCustomize.csproj", "{DED52736-6B10-447B-B959-B1238A84E42B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspnetCore50RouteCustomize", "AspnetCore50RouteCustomize\AspnetCore50RouteCustomize.csproj", "{DED52736-6B10-447B-B959-B1238A84E42B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnetCore60TagDescriptionSamples", "AspnetCore60TagDescriptionSamples\AspnetCore60TagDescriptionSamples.csproj", "{6BDF7022-69B7-4F0A-B0BF-DACD620219A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{DED52736-6B10-447B-B959-B1238A84E42B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DED52736-6B10-447B-B959-B1238A84E42B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DED52736-6B10-447B-B959-B1238A84E42B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BDF7022-69B7-4F0A-B0BF-DACD620219A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BDF7022-69B7-4F0A-B0BF-DACD620219A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BDF7022-69B7-4F0A-B0BF-DACD620219A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BDF7022-69B7-4F0A-B0BF-DACD620219A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
